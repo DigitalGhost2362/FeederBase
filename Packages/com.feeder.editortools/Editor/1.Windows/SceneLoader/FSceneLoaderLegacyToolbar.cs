@@ -89,7 +89,7 @@ namespace Feeder
         {
             if (warned) return;
             warned = true;
-            Debug.LogWarning($"Scene Loader: no Scenes toolbar button, {missing} was not found in this Unity version. Open it from Tools > Feeder > Scene Loader or {FSceneLoaderWindow.ShortcutLabel()}.");
+            Debug.LogWarning($"Scene Loader: no Scenes toolbar button, {missing} was not found in this Unity version. Open it from Tools > Feeder > Editor Tools > Windows > Scene Loader or {FSceneLoaderWindow.ShortcutLabel()}.");
         }
     }
 }

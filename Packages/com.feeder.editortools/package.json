@@ -1,15 +1,15 @@
 {
   "name": "com.feeder.editortools",
-  "version": "1.2.0",
-  "displayName": "Feeder Editor Tools Package",
-  "description": "Feeder Unity editor tools, including the Scene Loader, the Google Sheet data importer and asset generators.",
+  "version": "2.0.0",
+  "displayName": "Feeder Editor Tools",
+  "description": "Unity editor tools: batch asset and prefab operations, renaming, optimization, scene loader and script templates. Heavy features ship as optional modules.",
   "unity": "2022.3",
   "author": {
     "name": "Feeder",
     "email": "bingo6xxx@gmail.com"
   },
   "dependencies": {
-    "com.unity.formats.fbx": "4.2.1",
-    "com.unity.nuget.newtonsoft-json": "3.2.1"
+    "com.unity.textmeshpro": "3.0.7",
+    "com.unity.2d.sprite": "1.0.0"
   }
 }

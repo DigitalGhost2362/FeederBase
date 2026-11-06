@@ -8,6 +8,8 @@ namespace Feeder
 {
     public sealed class FMissingComponentHandlerTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "missing-component-handler-tool.html";
+
         protected override string GetDescription()
         {
             return "Chọn danh sách prefab/scene; tab Replace thay missing script bằng component được chọn, tab Delete xóa mọi missing script, tab Find liệt kê missing script theo từng nhóm script identifier.";

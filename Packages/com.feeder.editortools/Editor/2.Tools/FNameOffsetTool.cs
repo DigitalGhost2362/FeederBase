@@ -7,6 +7,8 @@ namespace Feeder
 {
     public sealed class FNameOffsetTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "name-offset-tool.html";
+
         protected override string GetDescription()
         {
             return "Chọn đường dẫn holder và offset Y, thêm target, bấm Adjust để dời vị trí tên theo offset đã chọn.";

@@ -26,7 +26,7 @@ namespace Feeder
     /// <summary>Applies palette texture pixels and remapped mesh data to project assets.</summary>
     public static class MeshPaletteApplyService
     {
-        private const string UndoPrefix = "Feeder Texture Modifier";
+        private const string UndoPrefix = "Texture Modifier";
 
         public static MeshPaletteApplyResult Apply(
             MeshPaletteColorizerSession session,

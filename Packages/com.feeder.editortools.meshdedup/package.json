@@ -1,0 +1,14 @@
+{
+  "name": "com.feeder.editortools.meshdedup",
+  "version": "1.0.0",
+  "displayName": "Editor Tools - Mesh Dedup & Align",
+  "description": "Find duplicate meshes and align meshes with a Kabsch/ICP solver. Bundles MathNet.Numerics.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Feeder",
+    "email": "bingo6xxx@gmail.com"
+  },
+  "dependencies": {
+    "com.feeder.editortools": "2.0.0"
+  }
+}

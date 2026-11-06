@@ -8,6 +8,8 @@ namespace Feeder
 {
     public sealed class FCharacterMeshUpdateTool : FBaseTool
     {
+        protected override string GetDocsPage() => "character-mesh-updater-tool.html";
+
         public enum CollectMode
         {
             [LabelText("Skinned Mesh Only")]

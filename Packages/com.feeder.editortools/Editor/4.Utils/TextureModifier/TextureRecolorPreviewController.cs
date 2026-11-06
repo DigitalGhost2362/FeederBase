@@ -13,7 +13,7 @@ namespace Feeder
     /// </summary>
     public class TextureRecolorPreviewController
     {
-        private const string UndoPrefix = "Feeder Texture Recolor";
+        private const string UndoPrefix = "Texture Recolor";
 
         private Texture2D previewTexture;
         private Material previewMaterial;

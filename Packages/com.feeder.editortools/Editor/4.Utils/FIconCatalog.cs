@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Feeder
 {
-    internal static class FIconCatalog
+    public static class FIconCatalog
     {
         public const SdfIconType MenuWindowIcon = SdfIconType.LayoutTextSidebar;
         public const SdfIconType ScriptTemplateWindowIcon = SdfIconType.FileEarmarkText;

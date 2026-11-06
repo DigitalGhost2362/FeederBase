@@ -94,7 +94,7 @@ namespace Feeder
 
         #region API
 
-        [MenuItem("Tools/Feeder/Scene Loader", priority = 1)]
+        [MenuItem("Tools/Feeder/Editor Tools/Windows/Scene Loader", priority = 20)]
         public static void Open()
         {
             var projectBrowser = Type.GetType("UnityEditor.ProjectBrowser,UnityEditor");

@@ -8,6 +8,8 @@ namespace Feeder
 {
     public sealed class FPrefabModifyTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "prefab-modify-tool.html";
+
         protected override string GetDescription()
         {
             return "Chọn prefab/scene object, chọn node theo Hierarchy Path; tab Modify sửa Active/Layer/Tag/Transform của node rồi Apply cho mọi target, tab Delete xóa node khỏi mọi target.";

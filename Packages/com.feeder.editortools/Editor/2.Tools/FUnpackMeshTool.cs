@@ -11,6 +11,8 @@ namespace Feeder
 {
     public sealed class FUnpackMeshTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "unpack-mesh-tool.html";
+
         private const string CommonFolderName = "_Common";
         private const string ModelsFolderName = "Models";
         private const string MaterialsFolderName = "Materials";

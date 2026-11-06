@@ -1,0 +1,14 @@
+{
+  "name": "com.feeder.editortools.assetcache",
+  "version": "1.0.0",
+  "displayName": "Editor Tools - Asset Cache",
+  "description": "Browse and filter every asset in the project from one window.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Feeder",
+    "email": "bingo6xxx@gmail.com"
+  },
+  "dependencies": {
+    "com.feeder.editortools": "2.0.0"
+  }
+}

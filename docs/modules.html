@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Module tuỳ chọn - Feeder Editor Tools</title>
+<meta name="description" content="Package lõi chỉ chứa tool không cần thư viện ngoài. Mỗi module dưới đây là một package riêng, chỉ cài khi bạn thật sự cần nó.">
+<meta name="theme-color" content="#0f131a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23151a23'/%3E%3Cpath d='M16 16V5' stroke='%237fe08e' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 16h11' stroke='%23ff5a6a' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 16l-8 8' stroke='%2358a0ff' stroke-width='3' stroke-linecap='round'/%3E%3Crect x='13' y='13' width='6' height='6' rx='1' fill='%23ffc44d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script>(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){c.add('motion');try{if(sessionStorage.getItem('feeder-curtain')){sessionStorage.removeItem('feeder-curtain');c.add('is-entering')}}catch(e){}}setTimeout(function(){if(!window.__feeder){c.remove('motion','is-entering')}},3000)})(document)</script>
+<script defer src="assets/vendor/gsap.min.js"></script>
+<script defer src="assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="assets/vendor/lenis.min.js"></script>
+<script defer src="assets/tools-data.js"></script>
+<script defer src="assets/site.js"></script>
+</head>
+<body data-root="">
+<a class="skip" href="#main">Bỏ qua tới nội dung</a>
+<div class="readbar" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 16V4" stroke="#7fe08e" stroke-width="2.4" stroke-linecap="round"/><path d="M16 16h12" stroke="#ff5a6a" stroke-width="2.4" stroke-linecap="round"/><path d="M16 16 7 25" stroke="#58a0ff" stroke-width="2.4" stroke-linecap="round"/><path d="m16 1.5 3 4h-6zM30.5 16l-4 3v-6zM5 27.5l1-4.9 3.9 3.9z" fill="currentColor" opacity=".0"/><rect x="13" y="13" width="6" height="6" rx="1" fill="#ffc44d"/></svg><span>Feeder Editor Tools</span></a>
+  <nav class="topnav" aria-label="Chính"><a href="index.html">Tool</a><a href="modules.html" aria-current="page">Module</a><a href="https://github.com/BingoBoiz/FeederEditorTools" class="hide-sm">GitHub</a></nav>
+  <button class="search-btn" type="button" data-search aria-label="Tìm tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="label">Tìm tool</span><kbd>/</kbd></button>
+</header>
+<header class="phead">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">Tool</a><span>/</span><span class="chip">Module</span></p>
+    <h1>Module tuỳ chọn</h1>
+    <p class="lead">Package lõi chỉ chứa tool không cần thư viện ngoài. Mỗi module dưới đây là một package riêng, chỉ cài khi bạn thật sự cần nó.</p>
+  </div>
+</header>
+<main id="main">
+<section class="sec sec--tight">
+  <div class="wrap mod-intro">
+    <div data-reveal>
+      <h2 id="cai-bang-cua-so-modules" style="font-size:clamp(1.8rem,3.4vw,2.8rem);margin-bottom:22px">Cài bằng cửa sổ Modules</h2>
+      <ol class="steps">
+  <li>Mở Tools &gt; Feeder &gt; Editor Tools &gt; Modules.</li>
+  <li>Tìm module cần dùng, xem phần nó kéo theo những gì.</li>
+  <li>Bấm Cài. Unity sẽ tải package qua Package Manager.</li>
+  <li>Bấm Gỡ nếu muốn bỏ module đó ra khỏi project.</li>
+</ol>
+    </div>
+    <div data-reveal><figure class="shot">
+  <div class="frame" style="--ar:1100/681">
+    <i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i>
+    <div class="frame__img" data-zoom tabindex="0" role="button" aria-label="Phóng to ảnh: Cửa sổ Modules với nút Cài và Gỡ cho từng module."><img src="images/modules-window.png" alt="Cửa sổ Modules với nút Cài và Gỡ cho từng module." width="1100" height="681" fetchpriority="high" decoding="async" onerror="this.closest('figure').classList.add('missing')"></div>
+    <span class="zoom-hint" aria-hidden="true">Bấm để phóng to</span>
+    <p class="placeholder">Ảnh <code>images/modules-window.png</code> chưa chụp.</p>
+  </div>
+  <figcaption>Cửa sổ Modules với nút Cài và Gỡ cho từng module.</figcaption>
+</figure></div>
+  </div>
+</section>
+<section class="sec sec--tight">
+  <div class="wrap">
+    <div class="sec__head"><h2 id="cai-thu-cong" data-reveal>Cài thủ công bằng git URL</h2><div data-reveal><p>Nếu không muốn dùng cửa sổ Modules, dán git URL vào Package Manager theo cách thông thường.</p></div></div>
+    <div class="tbl tbl--stack urls" data-reveal><table>
+<thead><tr><th>Module</th><th>Git URL</th></tr></thead>
+<tbody>
+<tr><td>Mesh Dedup &amp; Align</td><td>https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.meshdedup <button class="copy-sm" type="button" data-copy="https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.meshdedup" aria-label="Chép git URL của Mesh Dedup &amp; Align"><span>Chép</span></button></td></tr>
+<tr><td>Repack Models (FBX)</td><td>https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.repackfbx <button class="copy-sm" type="button" data-copy="https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.repackfbx" aria-label="Chép git URL của Repack Models (FBX)"><span>Chép</span></button></td></tr>
+<tr><td>GoogleSheet Importer</td><td>https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.googlesheet <button class="copy-sm" type="button" data-copy="https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.googlesheet" aria-label="Chép git URL của GoogleSheet Importer"><span>Chép</span></button></td></tr>
+<tr><td>Asset Cache</td><td>https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.assetcache <button class="copy-sm" type="button" data-copy="https://github.com/BingoBoiz/FeederEditorTools.git?path=/Packages/com.feeder.editortools.assetcache" aria-label="Chép git URL của Asset Cache"><span>Chép</span></button></td></tr>
+<tr><td>Mesh Modifier</td><td class="is-none">không phát hành</td></tr>
+</tbody>
+</table></div>
+  </div>
+</section>
+<section class="sec sec--tight">
+  <div class="wrap">
+    <div class="sec__head"><h2 id="chi-tiet" data-reveal>Chi tiết từng module</h2></div>
+    <div class="mods" data-stagger>
+<article class="module" data-reveal><span class="crate"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8 22v20l20 10 20-10V22L28 32z" fill="rgba(255,255,255,.02)"/><path d="M28 32v20M8 22l20 10 20-10"/><g class="lid"><path d="M6 16 28 6l22 10-22 10z" fill="rgba(255,255,255,.04)"/></g></svg></span>
+<h3>Mesh Dedup &amp; Align</h3>
+<p>So sánh và gộp mesh trùng nhau, canh mesh về đúng vị trí bằng thuật toán Kabsch/ICP.</p>
+<p><strong>Kéo theo:</strong> Kèm thư viện MathNet.Numerics (~2 MB).</p>
+<p><strong>Tool trong module:</strong> Deduplicate Mesh Tool</p>
+</article>
+<article class="module" data-reveal><span class="crate"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8 22v20l20 10 20-10V22L28 32z" fill="rgba(255,255,255,.02)"/><path d="M28 32v20M8 22l20 10 20-10"/><g class="lid"><path d="M6 16 28 6l22 10-22 10z" fill="rgba(255,255,255,.04)"/></g></svg></span>
+<h3>Repack Models (FBX)</h3>
+<p>Xuất từng mesh ra file FBX cạnh asset gốc rồi trỏ lại tham chiếu trong scene.</p>
+<p><strong>Kéo theo:</strong> Kéo theo package Unity com.unity.formats.fbx.</p>
+<p><strong>Tool trong module:</strong> Repack Models Tool</p>
+</article>
+<article class="module" data-reveal><span class="crate"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8 22v20l20 10 20-10V22L28 32z" fill="rgba(255,255,255,.02)"/><path d="M28 32v20M8 22l20 10 20-10"/><g class="lid"><path d="M6 16 28 6l22 10-22 10z" fill="rgba(255,255,255,.04)"/></g></svg></span>
+<h3>GoogleSheet Importer</h3>
+<p>Đọc Google Sheet qua service account, sinh class C# và ScriptableObject từ dữ liệu sheet.</p>
+<p><strong>Kéo theo:</strong> Kèm Google Apis DLL, kéo theo com.unity.nuget.newtonsoft-json.</p>
+<p><strong>Tool trong module:</strong> GoogleSheet Importer (cửa sổ riêng)</p>
+</article>
+<article class="module" data-reveal><span class="crate"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8 22v20l20 10 20-10V22L28 32z" fill="rgba(255,255,255,.02)"/><path d="M28 32v20M8 22l20 10 20-10"/><g class="lid"><path d="M6 16 28 6l22 10-22 10z" fill="rgba(255,255,255,.04)"/></g></svg></span>
+<h3>Asset Cache</h3>
+<p>Cửa sổ duyệt, lọc và tìm tham chiếu của mọi asset trong project.</p>
+<p><strong>Kéo theo:</strong> Không cần dependency ngoài.</p>
+<p><strong>Tool trong module:</strong> Asset Cache (cửa sổ riêng)</p>
+</article>
+<article class="module is-local" data-reveal><span class="crate"><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M8 22v20l20 10 20-10V22L28 32z" fill="rgba(255,255,255,.02)"/><path d="M28 32v20M8 22l20 10 20-10"/><g class="lid"><path d="M6 16 28 6l22 10-22 10z" fill="rgba(255,255,255,.04)"/></g></svg></span>
+<h3>Mesh Modifier</h3>
+<p>Gộp nhiều mesh thành một (atlas texture, remap UV) và tách một mesh thành nhiều phần.</p>
+<p><strong>Kéo theo:</strong> Dựng trên Mesh Baker (Digital Opus, Unity Asset Store). Không phát hành kèm repo vì là asset trả phí của bên thứ ba.</p>
+<p><strong>Tool trong module:</strong> Mesh Modifier (cửa sổ riêng)</p>
+<p class="warn">Module này không nằm trong repo. Nó dựng trên một asset trả phí của bên thứ ba nên không thể phát hành kèm. Mua asset đó rồi chép thư mục module vào <code>Packages/</code> của project.</p>
+</article>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__big" aria-hidden="true">Feeder</p>
+  </div>
+  <div class="wrap foot__row">
+    <p>Tài liệu sinh từ <code>DocsSource/</code>. Sửa nội dung ở đó rồi chạy
+  <code>python DocsSource/generate.py</code>.</p>
+    <a href="https://github.com/BingoBoiz/FeederEditorTools"> GitHub</a>
+  </div>
+</footer>
+<div class="curtain" aria-hidden="true"><i></i><i></i><i></i></div>
+</body>
+</html>

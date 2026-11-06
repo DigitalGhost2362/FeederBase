@@ -13,6 +13,8 @@ namespace Feeder
     /// </summary>
     public sealed class FVfxFlipbookTrimTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "vfx-flipbook-trim-tool.html";
+
         private const int CurveSampleCount = 256;
         private const float PreviewMaxWidth = 320f;
 

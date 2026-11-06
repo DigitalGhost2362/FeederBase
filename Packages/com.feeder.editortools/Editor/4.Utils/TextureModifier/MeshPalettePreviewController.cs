@@ -8,7 +8,7 @@ namespace Feeder
     /// <summary>Owns temporary preview material, texture, mesh, and renderer restoration.</summary>
     public class MeshPalettePreviewController
     {
-        private const string UndoPrefix = "Feeder Texture Modifier";
+        private const string UndoPrefix = "Texture Modifier";
 
         private Texture2D previewTexture;
         private Material previewMaterial;

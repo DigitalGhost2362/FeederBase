@@ -13,6 +13,8 @@ namespace Feeder
 {
     public sealed class FDataFillerTool : FTargetAssetsToolBase
     {
+        protected override string GetDocsPage() => "data-filler-tool.html";
+
         [Serializable]
         private sealed class MatchPreviewRow
         {

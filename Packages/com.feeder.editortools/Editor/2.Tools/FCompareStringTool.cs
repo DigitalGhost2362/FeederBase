@@ -25,15 +25,11 @@ namespace Feeder
 
         protected override string GetDescription()
         {
-            return "Khớp mờ TargetAssets với các giá trị enum theo tên. Bỏ qua hoa/thường, ký tự đặc biệt, đảo thứ tự token và lỗi gõ. " +
-                   "Ví dụ: enum 'Jewelry_Flower_Choker' khớp asset 'flowe_choker_jewelry' ở mức ~95%. " +
-                   "Ngưỡng % chia theo độ dài tên nên hụt với tên ngắn — bấm icon cạnh label để đổi sang ngưỡng theo số ký tự lệch (gợi ý 1–3), " +
-                   "lúc đó cột Score hiện 'Δn' = số ký tự sai. " +
-                   "Dải Match Strategy: tắt 'Fuzzy' để chỉ gán khi tên giống hệt từng ký tự (dòng ngưỡng ẩn đi); " +
-                   "tắt 'Unique Asset' để nhiều enum dùng chung một asset; " +
-                   "bật 'Fill All' thì enum dưới ngưỡng vẫn nhận asset tốt nhất còn lại và dòng bị gán ép có dấu * ở cột Score. " +
-                   "Điểm số vẫn hiện khi dưới ngưỡng để bạn tinh chỉnh. Cột Asset sửa được để chỉnh tay.";
+            return "Khớp mờ TargetAssets với các giá trị enum theo tên, bỏ qua hoa thường, ký tự đặc biệt, " +
+                   "đảo thứ tự token và lỗi gõ. Chi tiết về ngưỡng và Match Strategy xem trong Docs.";
         }
+
+        protected override string GetDocsPage() => "compare-string-tool.html";
 
         [PropertySpace(SpaceBefore = 8)]
         [LabelText("Enum Type")]

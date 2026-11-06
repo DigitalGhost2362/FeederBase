@@ -12,7 +12,7 @@ namespace Feeder {
         private const string TemplatePathKey = "CustomScriptTemplatePath";
         private const string SessionResetKey = "CustomScriptTemplateSessionReset";
 
-        [MenuItem("Tools/Feeder/Script Template Window", priority = 2)]
+        [MenuItem("Tools/Feeder/Editor Tools/Windows/Script Template", priority = 25)]
         private static void OpenWindow()
         {
             var window = GetWindow<FScriptTemplateWindow>();

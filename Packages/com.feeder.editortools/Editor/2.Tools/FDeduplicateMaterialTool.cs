@@ -11,6 +11,8 @@ namespace Feeder
 {
     public sealed class FDeduplicateMaterialTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "deduplicate-material-tool.html";
+
         private static readonly string[] BaseMapPropertyNames = { "_BaseMap", "_MainTex" };
 
         [PropertyOrder(80)]
@@ -99,7 +101,10 @@ namespace Feeder
                 }
 
                 if (PrefabUtility.IsPartOfPrefabAsset(target))
+                {
+                    Debug.LogWarning($"[FDeduplicateMaterialTool] '{target.name}' là prefab asset — tool chỉ chạy trên object trong scene, bỏ qua.");
                     continue;
+                }
 
                 MeshFilter[] meshFilters = target.GetComponentsInChildren<MeshFilter>(true);
                 foreach (MeshFilter meshFilter in meshFilters)
@@ -273,7 +278,7 @@ namespace Feeder
                 ReplaceMaterialInTargetHierarchy(materialToRemove, materialToKeep);
                 MoveMaterialAssetToTrash(op, materialToRemove);
             }
-            _lastResolveOp = op.IsEmpty ? null : op;
+            if (!op.IsEmpty) _lastResolveOp = op;
 
             _duplicateGroups.RemoveAt(groupIndex);
             _reorderableListsByGroupIndex.Clear();

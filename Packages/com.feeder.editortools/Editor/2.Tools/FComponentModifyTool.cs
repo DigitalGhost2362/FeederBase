@@ -10,6 +10,8 @@ namespace Feeder
 {
     public sealed class FComponentModifyTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "component-modify-tool.html";
+
         protected override string GetDescription()
         {
             return "Chọn prefab/scene, chọn loại component; tab Add thêm component theo path, tab Find liệt kê mọi instance và nhảy tới Hierarchy, tab Modify sửa giá trị và Apply, tab Remove xóa component khỏi tất cả target.";

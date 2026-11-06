@@ -1,6 +1,5 @@
 #if UNITY_EDITOR
 using System.Collections.Generic;
-using Feeder.MB.Core;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -152,7 +151,7 @@ namespace Feeder
                     if (mesh.isReadable && !c.tiledUVs)
                     {
                         Rect uvB = new Rect();
-                        c.outOfBoundsUVs = MB_Utility.hasOutOfBoundsUVs(mesh, ref uvB);
+                        c.outOfBoundsUVs = FMeshUvUtils.HasOutOfBoundsUVs(mesh, ref uvB);
                     }
                     region = data.pixels; rw = data.width; rh = data.height;
                     c.analyzedWholeTexture = true;

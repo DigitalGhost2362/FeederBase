@@ -7,6 +7,8 @@ namespace Feeder
 {
     public sealed class FAssetOrganizerTool : FTargetAssetsToolBase
     {
+        protected override string GetDocsPage() => "asset-organizer-tool.html";
+
         private enum TransferMode { Move, Copy }
 
         protected override string GetDescription()
@@ -110,7 +112,7 @@ namespace Feeder
             }
 
             if (Mode == TransferMode.Move)
-                _lastMoveOp = op.IsEmpty ? null : op;
+                if (!op.IsEmpty) _lastMoveOp = op;
 
             Debug.Log($"<color=cyan>[Asset Organizer] {Mode} {successCount}/{assets.Count} asset → '{destFolder}'</color>");
             FSelectionUtils.SelectAndPing(assets);

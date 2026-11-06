@@ -8,7 +8,12 @@ namespace Feeder
 {
     public static class FComponentTypeOptionsProvider
     {
-        public static IEnumerable<ValueDropdownItem<Type>> GetComponentTypeOptions()
+        public static IEnumerable<ValueDropdownItem<Type>> GetComponentTypeOptions() => Options(false);
+
+        /// <summary>For tools that can only act on a script, so the dropdown never offers a type they reject.</summary>
+        public static IEnumerable<ValueDropdownItem<Type>> GetMonoBehaviourTypeOptions() => Options(true);
+
+        private static IEnumerable<ValueDropdownItem<Type>> Options(bool monoBehavioursOnly)
         {
             var types = TypeCache.GetTypesDerivedFrom<Component>();
             var list = new List<Type>(types.Count);
@@ -17,6 +22,7 @@ namespace Feeder
             {
                 var type = types[i];
                 if (type.IsAbstract) continue;
+                if (monoBehavioursOnly && !typeof(MonoBehaviour).IsAssignableFrom(type)) continue;
                 list.Add(type);
             }
 

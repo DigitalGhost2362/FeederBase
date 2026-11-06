@@ -7,6 +7,8 @@ namespace Feeder
 {
     public sealed class FModelScaleToColliderTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "model-scale-to-collider-tool.html";
+
         protected override string GetDescription()
         {
             return "Chọn base prefab và đường dẫn model, thêm danh sách target, bấm Scale để scale model theo collider của base.";

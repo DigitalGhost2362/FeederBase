@@ -8,6 +8,8 @@ namespace Feeder
 {
     public sealed class FAssetGroupTool : FTargetAssetsToolBase
     {
+        protected override string GetDocsPage() => "asset-group-tool.html";
+
         private const string Tab = "GroupMode";
         private const string TabAutoDiscover = "Auto Discover";
         private const int MaxNgramLen = 6;

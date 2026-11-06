@@ -7,6 +7,8 @@ namespace Feeder
 {
     public sealed class FComponentReplacerTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "component-replacer-tool.html";
+
         protected override string GetDescription()
         {
             return "Chọn danh sách prefab/scene, chọn Script A và Script B, bấm Replace để thay thế B bằng A và copy dữ liệu tương ứng.";
@@ -43,7 +45,7 @@ namespace Feeder
 
         private IEnumerable<ValueDropdownItem<Type>> GetComponentTypeOptions()
         {
-            return FComponentTypeOptionsProvider.GetComponentTypeOptions();
+            return FComponentTypeOptionsProvider.GetMonoBehaviourTypeOptions();
         }
 
         private Type ReplaceWithType => replaceWithType ?? throw new InvalidOperationException("replace type is null.");

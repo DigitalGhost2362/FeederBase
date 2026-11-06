@@ -8,11 +8,11 @@ namespace Feeder
 {
     public class FMenuEditorWindow : OdinMenuEditorWindow
     {
-        [MenuItem("Tools/Feeder/Feeder Menu Editor Window", priority = 0)]
+        [MenuItem("Tools/Feeder/Editor Tools/Tool Hub", priority = 0)]
         private static void OpenWindow()
         {
             var window = GetWindow<FMenuEditorWindow>();
-            window.titleContent = FIconCatalog.CreateWindowTitle("Feeder Menu Editor Window", FIconCatalog.WindowMenuTitleIcon);
+            window.titleContent = FIconCatalog.CreateWindowTitle("Editor Tools", FIconCatalog.WindowMenuTitleIcon);
             window.position = GUIHelper.GetEditorWindowRect().AlignCenter(800, 600);
             window.Show();
         }
@@ -25,9 +25,7 @@ namespace Feeder
 
         protected override OdinMenuTree BuildMenuTree()
         {
-            var settings = FMenuTreeSettings.instance;
-            var tree = new OdinMenuTree(settings.SupportsMultiSelect);
-            settings.ApplyTo(tree);
+            var tree = FMenuTreeStyle.Create();
             FMenuCatalog.AddTools(tree);
 
             return tree;

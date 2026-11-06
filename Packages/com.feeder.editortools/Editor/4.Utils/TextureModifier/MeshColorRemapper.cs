@@ -199,7 +199,7 @@ namespace Feeder
 
             if (canOverwriteInPlace)
             {
-                Undo.RegisterCompleteObjectUndo(sourceMesh, "Feeder Texture Modifier Overwrite Mesh");
+                Undo.RegisterCompleteObjectUndo(sourceMesh, "Texture Modifier Overwrite Mesh");
                 OverwriteMeshInPlace(sourceMesh, newMesh);
                 EditorUtility.SetDirty(sourceMesh);
                 writtenMeshPath = sourceMeshPath;

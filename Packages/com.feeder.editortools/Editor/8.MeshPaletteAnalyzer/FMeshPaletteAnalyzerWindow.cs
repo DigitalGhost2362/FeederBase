@@ -15,7 +15,7 @@ namespace Feeder
     /// </summary>
     public sealed class FMeshPaletteAnalyzerWindow : OdinEditorWindow
     {
-        private const string ToolName = "Feeder Mesh Palette Analyzer";
+        private const string ToolName = "Mesh Palette Analyzer";
         private const int MenuPriority = 4;
 
         private static readonly MeshPaletteVerdict[] AllVerdicts =
@@ -42,7 +42,7 @@ namespace Feeder
         private int hoverIndex = -1;
         private Vector2 scroll;
 
-        [MenuItem("Tools/Feeder/Feeder Mesh Palette Analyzer", priority = MenuPriority)]
+        [MenuItem("Tools/Feeder/Editor Tools/Windows/Mesh Palette Analyzer", priority = 24)]
         private static void OpenWindow()
         {
             var window = GetWindow<FMeshPaletteAnalyzerWindow>();

@@ -67,7 +67,7 @@ namespace Feeder
             return result;
         }
 
-        // keepVisible stay visible+pickable; MeshHighlightDrawer holders are shown but not pickable so they don't block selection
+        // keepVisible stay visible+pickable; highlight holders are shown but not pickable so they do not block selection
         public static void IsolateGameObjects(Scene scene, IReadOnlyList<GameObject> keepVisible)
         {
             if (!scene.IsValid())

@@ -8,6 +8,8 @@ namespace Feeder
 {
     public sealed class FAssetCollectorTool : FTargetAssetsToolBase
     {
+        protected override string GetDocsPage() => "asset-collector.html";
+
         private const string AllTypesLabel = "All (Tất cả)";
         private const string SpriteFilter = "t:Sprite";
 
@@ -160,7 +162,8 @@ namespace Feeder
             FDataPersistenceService.SaveData(data);
 
             FSelectionUtils.SelectAndPing(assets);
-            Debug.Log($"<color=cyan>[Asset Collector] Đã nạp {assets.Count} '{selectedType}' → TargetAssets ({data.TargetPrefabs.Count} prefabs → TargetPrefabs)</color>");
+            int prefabCount = data.TargetPrefabs.Count(p => p != null);
+            Debug.Log($"<color=cyan>[Asset Collector] Đã nạp {assets.Count} '{selectedType}' → TargetAssets ({prefabCount} prefabs → TargetPrefabs)</color>");
         }
 
         // Sprite là sub-asset của texture nên phải LoadAllAssetsAtPath rồi lọc Sprite,

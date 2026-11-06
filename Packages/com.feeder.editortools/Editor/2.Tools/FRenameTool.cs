@@ -9,6 +9,8 @@ namespace Feeder
 {
     public sealed class FRenameTool : FTargetAssetsToolBase
     {
+        protected override string GetDocsPage() => "rename-tool.html";
+
         protected override string GetDescription()
         {
             return "Đổi tên asset hoặc scene object theo pattern hoặc tìm & thay thế. Kéo asset vào TargetAssets trước.";
@@ -180,7 +182,7 @@ namespace Feeder
             ApplyAssetRenames(plan.AssetEntries, op);
             ApplySpriteRenames(plan.SpriteEntries, op);
             ApplySceneObjectRenames(plan.SceneEntries);
-            _lastOp = op.IsEmpty ? null : op;
+            if (!op.IsEmpty) _lastOp = op;
 
             Debug.Log($"[FRenameTool] {label}: đổi tên {plan.ChangeCount}, bỏ qua {plan.ErrorCount} lỗi.");
             RefreshInputPattern();

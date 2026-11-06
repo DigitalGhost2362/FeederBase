@@ -7,6 +7,8 @@ namespace Feeder
 {
     public sealed class FPrefabVariantCreatorTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "prefab-variant-creator-tool.html";
+
         protected override string GetDescription()
         {
             return "Chọn base prefab, vị trí gắn model và thư mục lưu; kéo danh sách model; bấm Create để tạo các variant mới.";

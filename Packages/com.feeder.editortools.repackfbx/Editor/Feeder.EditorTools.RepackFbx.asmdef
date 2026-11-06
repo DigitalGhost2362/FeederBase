@@ -1,0 +1,19 @@
+{
+    "name": "Feeder.EditorTools.RepackFbx",
+    "rootNamespace": "",
+    "references": [
+        "GUID:96ed0689910bb1949a2c56f188a011b5",
+        "GUID:0f9e8f73c69964f1e8176f9a0b86f9b2"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

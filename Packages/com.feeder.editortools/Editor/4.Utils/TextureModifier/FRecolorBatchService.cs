@@ -47,7 +47,7 @@ namespace Feeder
                 {
                     var renderer = targets[i];
                     string label = renderer != null ? renderer.name : "<null>";
-                    EditorUtility.DisplayProgressBar("Feeder Texture Recolor (Batch)",
+                    EditorUtility.DisplayProgressBar("Texture Recolor (Batch)",
                         $"({i + 1}/{targets.Count}) {label}", (float)i / targets.Count);
 
                     try
@@ -118,7 +118,7 @@ namespace Feeder
                 {
                     var renderer = targets[i];
                     string label = renderer != null ? renderer.name : "<null>";
-                    EditorUtility.DisplayProgressBar("Feeder Mesh Palette (Batch)",
+                    EditorUtility.DisplayProgressBar("Mesh Palette (Batch)",
                         $"({i + 1}/{targets.Count}) {label}", (float)i / targets.Count);
 
                     try

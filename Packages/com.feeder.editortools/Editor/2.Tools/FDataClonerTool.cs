@@ -11,6 +11,8 @@ namespace Feeder
 {
     public sealed class FDataClonerTool : FBaseTool
     {
+        protected override string GetDocsPage() => "data-cloner-tool.html";
+
         protected override string GetDescription() =>
             "Clone collection field (Dictionary, List, HashSet) từ một ScriptableObject sang cái khác. " +
             "Dictionary<Enum>: ghép theo tên enum (cross-enum). List/HashSet: copy toàn bộ phần tử.";

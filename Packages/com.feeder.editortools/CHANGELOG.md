@@ -1,18 +1,37 @@
 # Changelog
 
-## [Unreleased]
+## [2.0.0] - 2026-11-06
+
+### Added
+
+- `Tools > Feeder > Editor Tools > Modules` window: install or remove an optional module from inside the Editor, or copy its git URL.
+- A tool that belongs to a module you have not installed still appears in the tool tree, with a button that installs the module.
+- `Tools > Feeder > Editor Tools > Documentation`, and a **Docs** button on every tool that opens that tool's page.
 
 ### Changed
 
-- Google Sheet importer: every type name on a sheet is a full name, nothing is looked up implicitly. Cell A1 of a tab names the generated class (`RawItem` is global, `MyGame.RawItem` is generated inside `namespace MyGame`). An enum header token names the enum the same way (`s_Kind:ItemKind` is the global `ItemKind`, `s_Kind:MyGame.ItemKind` the one in `MyGame`).
-- Enum and component fields are written with the shortest name that still binds to the right type from the generated class, following the compiler's lookup (the class namespace, each parent namespace, global, then the file's usings). A namespace-qualified or `global::` name appears only when a same-named type would otherwise capture it. Output for existing global classes is unchanged.
-- Update Enum reads enums from every project assembly but writes only to the sheet's Enum Scripts and to files directly in its Script Folder. Values missing from an enum in any other file are reported, not written.
-- A new enum `Ns.MyEnum` is created in the first Enum Script with a `namespace Ns { }` block, a new global enum in the first Enum Script that declares no namespace. With no matching script, or when the insertion point sits inside an `#if` block, the plan reports it instead of guessing. With no Enum Scripts, each new enum still gets its own file in the Script Folder.
-- Update Enum no longer creates a global enum when an enum with the same short name exists in a namespace; it points to the full name instead. It also refuses to create an enum nested in a class.
+- Heavy features moved into separate packages. Install them alongside this one:
+  `com.feeder.editortools.meshdedup` (Deduplicate Mesh Tool, mesh align),
+  `com.feeder.editortools.repackfbx` (Repack Models Tool),
+  `com.feeder.editortools.googlesheet` (GoogleSheet Importer),
+  `com.feeder.editortools.assetcache` (Asset Cache window).
+- Menu tree regrouped into `Asset/`, `Prefab/` and `Optimize/`. `Optimized/` is now `Optimize/`; Asset Collector and Asset Group Tool moved into `Asset/`.
+- Windows moved under `Tools > Feeder > Editor Tools > Windows/`, settings under `Tools > Feeder > Editor Tools > Settings/`. `Feeder > Empty Feeder Trash` is now `Tools > Feeder > Editor Tools > Settings > Empty Trash`, and the root `Feeder` menu is gone.
+- Feeder Editor Tools menus now live under their own `Tools > Feeder > Editor Tools` layer. The main window is `Tools > Feeder > Editor Tools > Tool Hub`.
+- Window titles, tool names, progress bars and undo entries no longer repeat the word "Feeder".
+- Dependencies are now `com.unity.textmeshpro` and `com.unity.2d.sprite`. `com.unity.formats.fbx` moved to the Repack Models module and `com.unity.nuget.newtonsoft-json` to the GoogleSheet Importer module.
+
+### Fixed
+
+- Running a tool a second time no longer throws away the undo record of the first run. A second run that changes nothing used to clear it, which left Rename, Asset Organizer, Deduplicate Texture and Deduplicate Material with a disabled Revert button and the moved files stranded in the trash folder.
+- Replace With and Find in the Component Replacer tool now list only scripts. The dropdown offered every component type, and picking a built-in one such as BoxCollider always failed.
+- Deduplicate Texture and Deduplicate Material now warn when a target is a prefab asset. They only work on objects in a scene, and used to skip prefab assets without a word, which read as "no duplicates found".
+- Asset Collector reported the wrong number of prefabs. The typed Target Prefabs list is padded with empty slots so it lines up with Target Assets, and the log counted those slots as prefabs.
 
 ### Removed
 
-- The sheet `Namespace` field and the single `Enum Script` field, replaced by the `Enum Scripts` list. Existing sheets migrate when opened: the old Enum Script becomes the first entry of the list. A non-empty old Namespace no longer changes any output; it stays visible with a warning, and Generate Script flags an A1 cell without a namespace, until the field is cleared.
+- The Menu Style window. The tool tree always uses the built-in style.
+- The `Tools/Feeder/Legacy/*` menu and every tool under it.
 
 ## [1.2.0] - 2026-09-21
 

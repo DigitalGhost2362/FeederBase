@@ -13,9 +13,28 @@ namespace Feeder
         private void DrawAutoDescription()
         {
             DrawDescription(GetDescription() ?? DefaultDescription);
+            DrawDocsButton();
         }
 
         protected virtual string GetDescription() => null;
+
+        /// <summary>File name of this tool's page under docs/tools/. Null hides the Docs button.</summary>
+        protected virtual string GetDocsPage() => null;
+
+        private void DrawDocsButton()
+        {
+            string page = GetDocsPage();
+            if (string.IsNullOrEmpty(page)) return;
+
+            using (new GUILayout.HorizontalScope())
+            {
+                GUILayout.FlexibleSpace();
+                if (GUILayout.Button("Docs", GUILayout.Width(70f), GUILayout.Height(18f)))
+                    FDocs.Open(FDocs.ToolPage(page));
+            }
+
+            GUILayout.Space(4);
+        }
 
         protected void DrawDescription(string description)
         {

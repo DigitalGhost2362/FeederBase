@@ -7,6 +7,8 @@ namespace Feeder
 {
     public sealed class FSortOrderTool : FTargetAssetsToolBase
     {
+        protected override string GetDocsPage() => "sort-order-tool.html";
+
         [System.Serializable]
         private sealed class SortOrderMappingRow
         {

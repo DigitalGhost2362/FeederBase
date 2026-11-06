@@ -174,7 +174,7 @@ namespace Feeder
             return failed == 0;
         }
 
-        [MenuItem("Feeder/Empty Feeder Trash")]
+        [MenuItem("Tools/Feeder/Editor Tools/Settings/Empty Trash", priority = 41)]
         public static void EmptyTrash()
         {
             if (!AssetDatabase.IsValidFolder(TrashRoot))

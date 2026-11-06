@@ -16,7 +16,7 @@ namespace Feeder
     {
         private enum Tab { MeshPalette, TextureRecolor }
 
-        private const string ToolName = "Feeder Texture Modifier";
+        private const string ToolName = "Texture Modifier";
         private const string GeneratedFolder = "Assets/Generated Mesh Palette Colors";
         private const int MenuPriority = 2;
         private const float LeftColumnWidth = 300f;
@@ -100,7 +100,7 @@ namespace Feeder
         private int TexW => session.TextureWidth;
         private int TexH => session.TextureHeight;
 
-        [MenuItem("Tools/Feeder/Feeder Texture Modifier", priority = MenuPriority)]
+        [MenuItem("Tools/Feeder/Editor Tools/Windows/Texture Modifier", priority = 22)]
         private static void OpenWindow()
         {
             var window = GetWindow<FTextureModifierWindow>();

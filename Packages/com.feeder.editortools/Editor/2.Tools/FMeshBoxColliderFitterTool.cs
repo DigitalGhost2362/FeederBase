@@ -5,6 +5,8 @@ namespace Feeder
 {
     public sealed class FMeshBoxColliderFitterTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "mesh-box-collider-fitter-tool.html";
+
         protected override string GetDescription() =>
             "Kéo thả các GameObject vào list, bấm Fit để tạo child _Col chứa BoxCollider khớp chính xác với mesh (OBB). " +
             "Tất cả MeshRenderer trong hierarchy đều được xử lý, mỗi cái có một _Col riêng.";

@@ -1,0 +1,15 @@
+{
+  "name": "com.feeder.editortools.googlesheet",
+  "version": "1.0.0",
+  "displayName": "Editor Tools - GoogleSheet Importer",
+  "description": "Read Google Sheets through a service account and generate C# data classes and ScriptableObject assets.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Feeder",
+    "email": "bingo6xxx@gmail.com"
+  },
+  "dependencies": {
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.feeder.editortools": "2.0.0"
+  }
+}

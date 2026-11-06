@@ -1,0 +1,15 @@
+{
+  "name": "com.feeder.editortools.repackfbx",
+  "version": "1.0.0",
+  "displayName": "Editor Tools - Repack Models (FBX)",
+  "description": "Export each target mesh as an FBX next to the mesh asset and repoint scene references.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Feeder",
+    "email": "bingo6xxx@gmail.com"
+  },
+  "dependencies": {
+    "com.unity.formats.fbx": "4.2.1",
+    "com.feeder.editortools": "2.0.0"
+  }
+}

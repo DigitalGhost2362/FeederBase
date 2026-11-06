@@ -11,6 +11,8 @@ namespace Feeder
 {
     public sealed class FUnpackAnimationTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "unpack-animation-tool.html";
+
         private const string CommonFolderName = "_Common";
         private const string AnimationsFolderName = "Animations";
         private const string ControllersFolderName = "Controllers";

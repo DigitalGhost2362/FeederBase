@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Data Filler Tool - Feeder Editor Tools</title>
+<meta name="description" content="Tự điền một field chứa nhiều asset trên ScriptableObject hoặc Component bằng các asset trong Target Assets.">
+<meta name="theme-color" content="#0f131a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23151a23'/%3E%3Cpath d='M16 16V5' stroke='%237fe08e' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 16h11' stroke='%23ff5a6a' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 16l-8 8' stroke='%2358a0ff' stroke-width='3' stroke-linecap='round'/%3E%3Crect x='13' y='13' width='6' height='6' rx='1' fill='%23ffc44d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script>(function(d){var c=d.documentElement.classList;c.add('js');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){c.add('motion');try{if(sessionStorage.getItem('feeder-curtain')){sessionStorage.removeItem('feeder-curtain');c.add('is-entering')}}catch(e){}}setTimeout(function(){if(!window.__feeder){c.remove('motion','is-entering')}},3000)})(document)</script>
+<script defer src="../assets/vendor/gsap.min.js"></script>
+<script defer src="../assets/vendor/ScrollTrigger.min.js"></script>
+<script defer src="../assets/vendor/lenis.min.js"></script>
+<script defer src="../assets/tools-data.js"></script>
+<script defer src="../assets/site.js"></script>
+</head>
+<body data-root="../" class="g-asset">
+<a class="skip" href="#main">Bỏ qua tới nội dung</a>
+<div class="readbar" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="../index.html"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 16V4" stroke="#7fe08e" stroke-width="2.4" stroke-linecap="round"/><path d="M16 16h12" stroke="#ff5a6a" stroke-width="2.4" stroke-linecap="round"/><path d="M16 16 7 25" stroke="#58a0ff" stroke-width="2.4" stroke-linecap="round"/><path d="m16 1.5 3 4h-6zM30.5 16l-4 3v-6zM5 27.5l1-4.9 3.9 3.9z" fill="currentColor" opacity=".0"/><rect x="13" y="13" width="6" height="6" rx="1" fill="#ffc44d"/></svg><span>Feeder Editor Tools</span></a>
+  <nav class="topnav" aria-label="Chính"><a href="../index.html" aria-current="page">Tool</a><a href="../modules.html">Module</a><a href="https://github.com/BingoBoiz/FeederEditorTools" class="hide-sm">GitHub</a></nav>
+  <button class="search-btn" type="button" data-search aria-label="Tìm tool"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span class="label">Tìm tool</span><kbd>/</kbd></button>
+</header>
+<header class="phead">
+  <div class="wrap">
+    <p class="crumb"><a href="../index.html">Tool</a><span>/</span><span class="chip">Asset</span></p>
+    <h1>Data Filler Tool</h1>
+    <p class="lead">Tự điền một field chứa nhiều asset trên ScriptableObject hoặc Component bằng các asset trong Target Assets.</p>
+    
+  </div>
+</header>
+<div class="wrap doc">
+  <aside class="side" id="tool-nav" aria-label="Điều hướng tài liệu"><nav class="toc" aria-label="Mục lục"><h5>Trên trang này</h5><ol><li><a href="#khi-nao-dung">Khi nào dùng</a></li><li><a href="#giao-dien">Giao diện</a></li><li><a href="#cac-buoc">Các bước</a></li><li><a href="#tung-o-thiet-lap">Từng ô thiết lập</a></li><li><a href="#luu-y">Lưu ý</a></li></ol><div class="progress" aria-hidden="true"><i></i></div></nav><h5>Tất cả tool</h5><div class="side__group g-asset"><span>Asset</span><ul><li><a href="asset-collector.html">Asset Collector</a></li><li><a href="asset-group-tool.html">Asset Group Tool</a></li><li><a href="compare-string-tool.html">Compare String Tool</a></li><li><a href="sort-order-tool.html">Sort Order Tool</a></li><li><a href="rename-tool.html">Rename Tool</a></li><li><a href="asset-organizer-tool.html">Asset Organizer Tool</a></li><li><a href="data-filler-tool.html" aria-current="page">Data Filler Tool</a></li><li><a href="character-mesh-updater-tool.html">Character Mesh Updater Tool</a></li><li><a href="data-cloner-tool.html">Data Cloner Tool</a></li></ul></div><div class="side__group g-prefab"><span>Prefab</span><ul><li><a href="component-modify-tool.html">Component Modify Tool</a></li><li><a href="prefab-modify-tool.html">Prefab Modify Tool</a></li><li><a href="prefab-variant-creator-tool.html">Prefab Variant Creator Tool</a></li><li><a href="name-offset-tool.html">Name Offset Tool</a></li><li><a href="model-scale-to-collider-tool.html">Model Scale To Collider Tool</a></li><li><a href="mesh-box-collider-fitter-tool.html">Mesh Box Collider Fitter Tool</a></li><li><a href="component-replacer-tool.html">Component Replacer Tool</a></li><li><a href="missing-component-handler-tool.html">Missing Component Handler Tool</a></li></ul></div><div class="side__group g-optimize"><span>Optimize</span><ul><li><a href="unpack-mesh-tool.html">Unpack Mesh Tool</a></li><li><a href="unpack-animation-tool.html">Unpack Animation Tool</a></li><li><a href="deduplicate-texture-tool.html">Deduplicate Texture Tool</a></li><li><a href="deduplicate-material-tool.html">Deduplicate Material Tool</a></li><li><a href="vfx-flipbook-trim-tool.html">VFX Flipbook Trim Tool</a></li><li><a href="deduplicate-mesh-tool.html">Deduplicate Mesh Tool</a></li><li><a href="repack-models-tool.html">Repack Models Tool</a></li></ul></div></aside>
+  <main id="main" class="doc__main">
+    <button class="menu-btn" type="button" aria-controls="tool-nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg>Tất cả tool</button>
+<section id="khi-nao-dung">
+<h2 data-reveal>Khi nào dùng</h2>
+<p>Khi phải gán tay hàng chục sprite hoặc prefab vào một dictionary hay list trong ScriptableObject.</p>
+</section>
+<section id="giao-dien">
+<h2 data-reveal>Giao diện</h2>
+<figure class="shot" data-reveal>
+  <div class="frame frame--panel" style="--ar:1280/681;--ch:491">
+    <i class="h"></i><i class="h"></i><i class="h"></i><i class="h"></i>
+    <div class="frame__img" data-zoom tabindex="0" role="button" aria-label="Phóng to ảnh: Data Filler Tool trong cửa sổ Editor Tools."><img src="../images/data-filler-tool.png" alt="Data Filler Tool trong cửa sổ Editor Tools." width="1280" height="681" fetchpriority="high" decoding="async" onerror="this.closest('figure').classList.add('missing')"></div>
+    <span class="zoom-hint" aria-hidden="true">Bấm để phóng to</span>
+    <p class="placeholder">Ảnh <code>images/data-filler-tool.png</code> chưa chụp.</p>
+  </div>
+  <figcaption>Data Filler Tool trong cửa sổ Editor Tools.</figcaption>
+</figure>
+</section>
+<section id="cac-buoc">
+<h2 data-reveal>Các bước</h2>
+<ol class="steps">
+  <li>Nạp asset vào Target Assets, đúng thứ tự bạn muốn.</li>
+  <li>Chọn Target là ScriptableObject hoặc GameObject, rồi chọn Component nếu cần.</li>
+  <li>Chọn Field cần điền.</li>
+  <li>Bấm Preview để xem bảng Key to Asset.</li>
+  <li>Bấm Fill Field.</li>
+</ol>
+</section>
+<section id="tung-o-thiet-lap">
+<h2 data-reveal>Từng ô thiết lập</h2>
+<div class="tbl tbl--fields"><table>
+<thead><tr><th>Ô</th><th>Ý nghĩa</th></tr></thead>
+<tbody>
+<tr><td>Target / Component</td><td>Đối tượng chứa field cần điền.</td></tr>
+<tr><td>Field</td><td>Field đích. Hỗ trợ Dictionary&lt;Enum,T&gt;, Dictionary&lt;string,T&gt;, List&lt;T&gt;, T[] và HashSet&lt;T&gt;.</td></tr>
+<tr><td>Override Existing Values</td><td>Bật thì ghi đè cả những ô đã có giá trị.</td></tr>
+<tr><td>Asset Default (Optional)</td><td>Asset dùng cho những key không có asset tương ứng.</td></tr>
+</tbody>
+</table></div>
+</section>
+<section id="luu-y">
+<h2 data-reveal>Lưu ý</h2>
+<ul class="notes">
+  <li>Dictionary gán theo vị trí chứ không so tên: key thứ i nhận asset thứ i. Để một ô null trong Target Assets nếu muốn giữ chỗ, key đó sẽ nhận Asset Default.</li>
+  <li>List, Array và HashSet nhận toàn bộ asset hợp kiểu.</li>
+</ul>
+</section>
+    <nav class="pager" aria-label="Tool trước và sau"><a class="prev g-asset" href="asset-organizer-tool.html"><small><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg> Tool trước</small><strong>Asset Organizer Tool</strong></a><a class="next g-asset" href="character-mesh-updater-tool.html"><small>Tool tiếp theo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></small><strong>Character Mesh Updater Tool</strong></a></nav>
+  </main>
+</div>
+<footer class="foot">
+  <div class="wrap">
+    <p class="foot__big" aria-hidden="true">Feeder</p>
+  </div>
+  <div class="wrap foot__row">
+    <p>Tài liệu sinh từ <code>DocsSource/</code>. Sửa nội dung ở đó rồi chạy
+  <code>python DocsSource/generate.py</code>.</p>
+    <a href="https://github.com/BingoBoiz/FeederEditorTools"> GitHub</a>
+  </div>
+</footer>
+<div class="curtain" aria-hidden="true"><i></i><i></i><i></i></div>
+</body>
+</html>

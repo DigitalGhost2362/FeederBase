@@ -11,6 +11,8 @@ namespace Feeder
 {
     public sealed class FDeduplicateTextureTool : FTargetPrefabsToolBase
     {
+        protected override string GetDocsPage() => "deduplicate-texture-tool.html";
+
         private const int TexturePreviewSize = 96;
 
         // Base Map property names: URP = _BaseMap, Built-in = _MainTex
@@ -102,7 +104,10 @@ namespace Feeder
                 }
 
                 if (PrefabUtility.IsPartOfPrefabAsset(target))
+                {
+                    Debug.LogWarning($"[FDeduplicateTextureTool] '{target.name}' là prefab asset — tool chỉ chạy trên object trong scene, bỏ qua.");
                     continue;
+                }
 
                 MeshFilter[] meshFilters = target.GetComponentsInChildren<MeshFilter>(true);
                 foreach (MeshFilter meshFilter in meshFilters)
@@ -441,7 +446,7 @@ namespace Feeder
                 "Material texture-slot rewires nằm trong Undo (Ctrl+Z); nút này chỉ restore file texture đã xoá.");
             foreach (string path in pathsToDelete)
                 FAssetRevertService.MoveToTrash(op, path);
-            _lastResolveOp = op.IsEmpty ? null : op;
+            if (!op.IsEmpty) _lastResolveOp = op;
 
             _similarGroups.RemoveAt(groupIndex);
             _reorderableListsByGroupIndex.Remove(groupIndex);
