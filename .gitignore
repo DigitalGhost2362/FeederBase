@@ -81,4 +81,3 @@ crashlytics-build.properties
 .vsconfig
 
 # Local-only module (depends on a paid third-party package)
-Packages/com.feeder.editortools.meshmodifier/

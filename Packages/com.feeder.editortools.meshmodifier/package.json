@@ -1,0 +1,14 @@
+{
+  "name": "com.feeder.editortools.meshmodifier",
+  "version": "2.0.0",
+  "displayName": "Editor Tools - Mesh Modifier",
+  "description": "Mesh merge and split window. Merge packs the source textures into atlases, remaps UVs and combines many meshes into one mesh, material and prefab. Split cuts one mesh into separate parts.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Feeder",
+    "email": "bingo6xxx@gmail.com"
+  },
+  "dependencies": {
+    "com.feeder.editortools": "2.0.0"
+  }
+}

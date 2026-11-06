@@ -63,9 +63,8 @@ namespace Feeder
                 Id = "meshmodifier",
                 DisplayName = "Mesh Modifier",
                 Summary = "Gộp nhiều mesh thành một và tách mesh thành nhiều phần.",
-                Requires = "Dựng trên Mesh Baker (Digital Opus, Asset Store). Không phát hành kèm repo, bạn phải tự mua và chép module vào Packages/.",
-                MenuPaths = new string[0],
-                LocalOnly = true
+                Requires = "Không cần dependency ngoài.",
+                MenuPaths = new string[0]
             }
         };
 
